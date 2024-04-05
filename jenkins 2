@@ -1,0 +1,24 @@
+pipeline {
+    agent any
+    environment {
+        a = 10
+        name = 'name_1'
+        city = 'city_1'
+        result_1 = 'true'
+        result_2 = 'false'
+    }
+    stages {
+        stage('Example Stage') {
+            steps {
+                script {
+                    // You can access environment variables here
+                    echo "The value of 'a' is: ${env.a}"
+                    echo "The name is: ${env.name}"
+                    echo "The city is: ${env.city}"
+                    echo "Result 1: ${env.result_1}"
+                    echo "Result 2: ${env.result_2}"
+                }
+            }
+        }
+    }
+}
